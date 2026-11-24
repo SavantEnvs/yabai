@@ -1,0 +1,10 @@
+project: savantenvs/yabai
+target: fuzz_message
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_message/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_message
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_message/fuzz_message.dict
+    timeout: 5

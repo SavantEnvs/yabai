@@ -1,0 +1,9 @@
+project: savantenvs/yabai
+target: fuzz_sa
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_sa/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_sa
+    libfuzzer: true
+    timeout: 5
